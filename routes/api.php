@@ -18,4 +18,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::get('/data', 'MailApiController@index');
+Route::post('/data', 'MailApiController@index');
