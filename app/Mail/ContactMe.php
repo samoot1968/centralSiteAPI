@@ -29,7 +29,19 @@ class ContactMe extends Mailable
      */
     public function build(ContactForm $request)
     {
+        $name = $request->input('name');
+        $number = $request->input('number');
+        $website = $request->input('website');
+        $email = $request->input('email');
+        $letter = $request->input('letter');
 
-        return $this->view('emails.contact');
+        return $this->view('emails.contact')
+            ->with([
+                'name' => $name,
+                'number' => $number,
+                'website' => $website,
+                'email' => $email,
+                'letter' => $letter
+            ]);;
     }
 }
